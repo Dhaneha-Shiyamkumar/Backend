@@ -1,8 +1,12 @@
-const app = require('./app');
+const app = require("./config/express");
+const connect = require("./config/db");
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-  /* eslint-disable no-console */
-  console.log(`Listening: http://localhost:${port}`);
-  /* eslint-enable no-console */
+const PORT = 4001;
+const HOST = "localhost";
+
+// start db connection
+connect();
+
+app.listen(PORT, () => {
+  console.log(`Application started on http://${HOST}:${PORT}`);
 });
