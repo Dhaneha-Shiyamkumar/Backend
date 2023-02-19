@@ -12,6 +12,10 @@ module.exports = {
     uri: process.env.MONGO_DB_STRING,
   },
   isDev: process.env.NODE_ENV === "dev",
+  roles: {
+    USER: "user",
+    ADMIN: "admin",
+  },
   host: "http://localhost:3000/",
   ACCESS_TOKEN_SECRET: process.env.SECRET ? process.env.SECRET : SECRET,
   bcryptRounds: 10,
